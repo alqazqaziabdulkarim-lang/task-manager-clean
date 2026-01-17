@@ -23,7 +23,10 @@ module.exports = (data) => {
   return {
     title: data.title.trim(),
     description: data.description ? data.description.trim() : '',
-    completed: data.completed === true ? true : false
+    completed: data.completed === true ? true : false,
+    seats: Number(data.seats) || 0,
+    registeredStudents: Array.isArray(data.registeredStudents) ? data.registeredStudents : [],
+    ownerClub: data.ownerClub || ''
   };
 };
 // // Validation: Min Length (3)

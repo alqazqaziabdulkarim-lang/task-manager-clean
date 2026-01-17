@@ -23,5 +23,20 @@ module.exports = (data) => {
     updateData.completed = data.completed;
   }
 
+  if (data.seats !== undefined) {
+    updateData.seats = Number(data.seats) || 0;
+  }
+
+  if (data.registeredStudents !== undefined) {
+    if (!Array.isArray(data.registeredStudents)) {
+      throw new Error('قائمة الطلاب المسجلين يجب أن تكون مصفوفة');
+    }
+    updateData.registeredStudents = data.registeredStudents;
+  }
+
+  if (data.ownerClub !== undefined) {
+    updateData.ownerClub = data.ownerClub;
+  }
+
   return updateData;
 };
