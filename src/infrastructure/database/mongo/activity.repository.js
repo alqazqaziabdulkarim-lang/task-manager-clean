@@ -2,7 +2,7 @@
  * Activity Repository - Data Access Layer
  */
 
-const ActivityModel = require('./task.model');
+const ActivityModel = require('./activity.model');
 
 module.exports = {
   // إنشاء نشاط جديد في قاعدة البيانات
