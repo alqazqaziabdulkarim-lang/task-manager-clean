@@ -1,5 +1,5 @@
-const createDTO = require('../../../application/dto/create-task.dto');
-const updateDTO = require('../../../application/dto/update-task.dto');
+const createDTO = require('../../../application/dto/create-activity.dto');
+const updateDTO = require('../../../application/dto/update-activity.dto');
 
 /**
  * Activity Controller - التعامل مع طلبات واستجابات HTTP

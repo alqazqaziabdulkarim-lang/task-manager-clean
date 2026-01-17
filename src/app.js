@@ -16,10 +16,10 @@ const express = require('express');
 const cors = require('cors');
 
 // Import our custom modules
-const taskRepository = require('./infrastructure/database/mongo/task.repository');
-const taskUsecaseFactory = require('./application/usecases/task.usecase');
-const taskControllerFactory = require('./interfaces/http/controllers/task.controller');
-const taskRoutesFactory = require('./interfaces/http/routes/task.routes');
+const activityRepository = require('./infrastructure/database/mongo/activity.repository');
+const activityUsecaseFactory = require('./application/usecases/activity.usecase');
+const activityControllerFactory = require('./interfaces/http/controllers/activity.controller');
+const activityRoutesFactory = require('./interfaces/http/routes/activity.routes');
 
 // Create Express application instance
 const app = express();
@@ -55,14 +55,14 @@ app.use((req, res, next) => {
  * Repository → UseCase → Controller → Routes
  * Each layer depends on the previous one
  */
-const taskUsecase = taskUsecaseFactory(taskRepository);
-const taskController = taskControllerFactory(taskUsecase);
+const activityUsecase = activityUsecaseFactory(activityRepository);
+const activityController = activityControllerFactory(activityUsecase);
 
 /**
  * ROUTES
  * Define API endpoints
  */
-app.use('/api/tasks', taskRoutesFactory(taskController));
+app.use('/api/activities', activityRoutesFactory(activityController));
 
 // Health check endpoint - useful to verify server is running
 app.get('/api/health', (req, res) => {
