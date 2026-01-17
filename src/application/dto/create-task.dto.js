@@ -26,7 +26,8 @@ module.exports = (data) => {
     completed: data.completed === true ? true : false,
     seats: Number(data.seats) || 0,
     registeredStudents: Array.isArray(data.registeredStudents) ? data.registeredStudents : [],
-    ownerClub: data.ownerClub || ''
+    ownerClub: data.ownerClub || '',
+    ownerName: data.ownerName || 'نادي عام'
   };
 };
 // // Validation: Min Length (3)

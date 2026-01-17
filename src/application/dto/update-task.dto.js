@@ -38,5 +38,9 @@ module.exports = (data) => {
     updateData.ownerClub = data.ownerClub;
   }
 
+  if (data.ownerName !== undefined) {
+    updateData.ownerName = data.ownerName;
+  }
+
   return updateData;
 };

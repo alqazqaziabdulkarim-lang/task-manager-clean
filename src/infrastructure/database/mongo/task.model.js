@@ -37,6 +37,12 @@ const ActivitySchema = new mongoose.Schema({
     required: false // Temporary for migration
   },
 
+  // اسم النادي
+  ownerName: {
+    type: String,
+    default: 'نادي عام'
+  },
+
   // الطلاب المسجلين في النشاط
   registeredStudents: {
     type: [String],
