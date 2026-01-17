@@ -34,7 +34,7 @@ const app = express();
 // STUDENT NOTE: CORS = Cross-Origin Resource Sharing
 // This allows your Vue frontend (http://localhost:5173) to talk to your backend (http://localhost:3000)
 app.use(cors({
-    origin: ['http://localhost:5173', 'http://localhost:5174', 'sensational-bavarois-d98dbe.netlify.app'], // Allow Vite dev server
+    origin: ['http://localhost:5173', 'http://localhost:5174', 'https://sensational-bavarois-d98dbe.netlify.app'], // Allow Vite dev server
     credentials: true
 }));
 
